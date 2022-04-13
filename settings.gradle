@@ -9,4 +9,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Cryp2 Payment"
 include ':app'
-include ':Cryp2Pay Integration'
+include ':Cryp2Pay'
