@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@color/black">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/coinLogoOptions"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            app:civ_border_overlay="true"
+            app:civ_border_width="2dp"
+            app:civ_circle_background_color="@color/white"
+            android:elevation="@dimen/_30sdp"
+            app:civ_border_color="#73EEDC"
+            app:layout_constraintBottom_toBottomOf="@+id/payment_option_cv"
+            app:layout_constraintEnd_toEndOf="@id/payment_option_cv"
+            app:layout_constraintStart_toEndOf="@+id/payment_option_cv"
+            app:layout_constraintTop_toTopOf="@+id/payment_option_cv"
+            android:src="@drawable/bitcoin" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/payment_option_cv"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_95sdp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="@dimen/_18sdp"
+        app:cardElevation="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            app:cardBackgroundColor="#1A1A1A"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="#73EEDC"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/coinNameOptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bitcoin"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/dmsansbold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Avl"
+                        android:fontFamily="@font/dmsansreg"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <TextView
+                        android:id="@+id/coinValOptions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="9.8 btc"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsansmed"
+                        android:textSize="@dimen/_11sdp" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/coinInrOptions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:text="in Rs. 10000000"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
