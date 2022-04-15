@@ -15,7 +15,10 @@
         <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/drawable/ic_baseline_mail_outline_24.xml" value="0.2526041666666667" />
         <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/drawable/login_main_bg.xml" value="0.2526041666666667" />
         <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/drawable/login_secondary_bg.xml" value="0.2526041666666667" />
-        <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/layout/login.xml" value="0.23282051282051283" />
+        <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/layout/login.xml" value="0.2" />
+        <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/layout/mainui.xml" value="0.23645833333333333" />
+        <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/layout/payment_proceed.xml" value="0.23645833333333333" />
+        <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/Cryp2Pay/src/main/res/layout/single_row_paymentoptions.xml" value="0.23645833333333333" />
         <entry key="..\:/Cryp2Pay.com/Cryp2Pay Payment Integration Library/app/src/main/res/layout/activity_main.xml" value="0.22239583333333332" />
       </map>
     </option>

@@ -75,58 +75,58 @@ public class Utils {
         return finalName;
     }
 
-//    public static void setCoinLogo(ImageView imageView, String coin){
-//        switch (coin){
-//            case "BTC":
-////                imageView.setImageResource(R.drawable.bitcoin);
-//                Glide.with(imageView.getContext()).load(R.drawable.bitcoin)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "ALGO":
-////                imageView.setImageResource(R.drawable.algorandlogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.algorandlogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "ZIL":
-////                imageView.setImageResource(R.drawable.zillogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.zillogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "DOGE":
-////                imageView.setImageResource(R.drawable.dogecoinlogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.dogecoinlogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "DGB":
-////                imageView.setImageResource(R.drawable.digibytelogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.digibytelogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "TRX":
-////                imageView.setImageResource(R.drawable.trxlogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.trxlogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "XLM":
-////                imageView.setImageResource(R.drawable.xlmlogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.xlmlogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//            case "XRP":
-////                imageView.setImageResource(R.drawable.xrplogo);
-//                Glide.with(imageView.getContext()).load(R.drawable.xrplogo)
-//                        .centerCrop()
-//                        .into(imageView);
-//                break;
-//        }
-//    }
+    public static void setCoinLogo(ImageView imageView, String coin){
+        switch (coin){
+            case "BTC":
+//                imageView.setImageResource(R.drawable.bitcoin);
+                Glide.with(imageView.getContext()).load(R.drawable.bitcoin)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "ALGO":
+//                imageView.setImageResource(R.drawable.algorandlogo);
+                Glide.with(imageView.getContext()).load(R.drawable.algorandlogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "ZIL":
+//                imageView.setImageResource(R.drawable.zillogo);
+                Glide.with(imageView.getContext()).load(R.drawable.zillogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "DOGE":
+//                imageView.setImageResource(R.drawable.dogecoinlogo);
+                Glide.with(imageView.getContext()).load(R.drawable.dogecoinlogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "DGB":
+//                imageView.setImageResource(R.drawable.digibytelogo);
+                Glide.with(imageView.getContext()).load(R.drawable.digibytelogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "TRX":
+//                imageView.setImageResource(R.drawable.trxlogo);
+                Glide.with(imageView.getContext()).load(R.drawable.trxlogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "XLM":
+//                imageView.setImageResource(R.drawable.xlmlogo);
+                Glide.with(imageView.getContext()).load(R.drawable.xlmlogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "XRP":
+//                imageView.setImageResource(R.drawable.xrplogo);
+                Glide.with(imageView.getContext()).load(R.drawable.xrplogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+        }
+    }
 
     public static String ReturnCoinValue(String coin, JSONObject response){
         String returnVal = null;

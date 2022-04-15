@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000</color>
     <color name="cardBG">#F9F9F9</color>
     <color name="red">#FF1100</color>
     <color name="success">#DC8FF1</color>
