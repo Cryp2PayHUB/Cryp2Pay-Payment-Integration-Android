@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,6 +43,7 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cryp2pay.cryp2payintegration.adapter.PaymentOptionsAdapter;
 import com.cryp2pay.cryp2payintegration.model.BasicInfoModel;
@@ -69,7 +71,7 @@ public class Cryp2Pay {
     AppCompatButton pay, done;
     double amount;
     RecyclerView recyclerView;
-    private String btc, algo, doge, dgb, xlm, xrp, trx, zil;
+    private String btc, algo, doge, dgb, xlm, xrp, trx, zil, eth, ltc, one, btt;
     PaymentOptionsAdapter adapter;
     LinearLayoutManager layoutManager;
     ImageView coinView, checkCircle;
@@ -299,6 +301,10 @@ public class Cryp2Pay {
                     xlm = ReturnCoinValue("XLM", response);
                     dgb = ReturnCoinValue("DGB", response);
                     zil = ReturnCoinValue("ZIL", response);
+                    eth = ReturnCoinValue("ETH", response);
+                    ltc = ReturnCoinValue("LTC", response);
+                    one = ReturnCoinValue("ONE", response);
+                    btt = ReturnCoinValue("BTT", response);
 
 
 
@@ -311,6 +317,10 @@ public class Cryp2Pay {
                             new WalletModel("XLM",  xlm, ""),
                             new WalletModel("Digibyte",  dgb, ""),
                             new WalletModel("Zilliqa", zil, ""),
+                            new WalletModel("Ethereum", eth, ""),
+                            new WalletModel("Litecoin", ltc, ""),
+                            new WalletModel("Harmony", one, ""),
+                            new WalletModel("BitTorrent", btt, ""),
                     };
 //                    Log.d("myapp", merchantID + "merchant");
                     adapter = new PaymentOptionsAdapter(walletModel, activity, secondActivity, amount, token, mid, phoneNumber, shopName, dialog);
@@ -434,6 +444,34 @@ public class Cryp2Pay {
                             @Override
                             public void run() {
                                 showNextView();
+                                RequestQueue requestQueue = Volley.newRequestQueue(activity2);
+                                StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGOUT_ENDPOINT, new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        Toast.makeText(activity2, "Logged Out!", Toast.LENGTH_SHORT).show();
+                                    }
+                                }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+
+                                    }
+                                }) {
+                                    @Nullable
+                                    @Override
+                                    protected Map<String, String> getParams() throws AuthFailureError {
+                                        Map<String, String> hashMap = new HashMap<>();
+                                        hashMap.put("token", token1);
+                                        return hashMap;
+
+                                    }
+
+                                    public Map<String, String> getHeaders() throws AuthFailureError {
+                                        Map<String, String> params = new HashMap<String, String>();
+                                        params.put("Authorization", "Token " + token1);
+                                        return params;
+                                    }
+                                };
+                                requestQueue.add(stringRequest);
                             }
                         }, 800);
                     }

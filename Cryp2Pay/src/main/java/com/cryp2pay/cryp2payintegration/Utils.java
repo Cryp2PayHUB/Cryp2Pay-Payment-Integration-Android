@@ -23,16 +23,10 @@ public class Utils {
 
     public static final String BASE_API_URL = "http://43.204.35.41/";
     public static final String LOGIN_ENDPOINT = BASE_API_URL + "api/login/";
-    public static final String REGISTER_ENDPOINT = BASE_API_URL + "api/register/";
     public static final String VERIFY_PHONE_ENDPOINT = BASE_API_URL + "api/varify_number/";
     public static final String GET_WALLET_INFO_ENDPOINT = BASE_API_URL + "api/wallets/";
-    public static final String TRANSACTION_HISTORY_ENDPOINT = BASE_API_URL + "api/wallets/transactions/";
-    public static final String TOP_UP_WALLET_ENDPOINT = BASE_API_URL + "topup/";
-    public static final String USER_TRANSFER_ENDPOINT = BASE_API_URL + "api/wallets/transfer/";
     public static final String MERCHANT_TRANSFER_ENDPOINT = BASE_API_URL + "merchant/transfer/";
     public static final String LOGOUT_ENDPOINT = BASE_API_URL + "api/logout/";
-    public static final String WITHDRAW_COINS_ENDPOINT = BASE_API_URL + "api/wallets/withdraw/";
-    public static final String AADHAR_URL_ENDPOINT = BASE_API_URL + "api/varify_customer_document/";
     public static final String IS_VERIFIED_ENDPOINT = BASE_API_URL  + "api/is_varified/";
     public static int VERIFIED_STATE;
 
@@ -70,6 +64,22 @@ public class Utils {
             case "zil":
             case "zilliqa":
                 finalName = "ZIL";
+                break;
+            case "eth":
+            case "ethereum":
+                finalName = "ETH";
+                break;
+            case "ltc":
+            case "litecoin":
+                finalName = "LTC";
+                break;
+            case "one":
+            case "harmony":
+                finalName = "ONE";
+                break;
+            case "btt":
+            case "bittorrent":
+                finalName = "BTT";
                 break;
         }
         return finalName;
@@ -125,6 +135,26 @@ public class Utils {
                         .centerCrop()
                         .into(imageView);
                 break;
+            case "ETH":
+                Glide.with(imageView.getContext()).load(R.drawable.ethlogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "LTC":
+                Glide.with(imageView.getContext()).load(R.drawable.ltclogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "ONE":
+                Glide.with(imageView.getContext()).load(R.drawable.onelogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
+            case "BTT":
+                Glide.with(imageView.getContext()).load(R.drawable.bttlogo)
+                        .centerCrop()
+                        .into(imageView);
+                break;
         }
     }
 
@@ -158,22 +188,6 @@ public class Utils {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-//                    switch (getState){
-//                        case "-2":
-//                            VERIFIED_STATE = -2;
-//                            break;
-//                        case "-1":
-//                            VERIFIED_STATE = -1;
-//                            break;
-//                        case "0":
-//                            VERIFIED_STATE = 0;
-//                            break;
-//                        case "1":
-//                            VERIFIED_STATE = 1;
-//                            break;
-//                        default:
-//                            VERIFIED_STATE = 2;
-//                    }
 
                     if (getState.equals("-2")){
                         VERIFIED_STATE = -2;

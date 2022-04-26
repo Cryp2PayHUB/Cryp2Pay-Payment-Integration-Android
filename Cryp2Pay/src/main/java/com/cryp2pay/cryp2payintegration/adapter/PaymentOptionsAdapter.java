@@ -1,5 +1,6 @@
 package com.cryp2pay.cryp2payintegration.adapter;
 
+import static com.cryp2pay.cryp2payintegration.Utils.returnCoinName;
 import static com.cryp2pay.cryp2payintegration.Utils.setCoinLogo;
 import static com.cryp2pay.cryp2payintegration.Utils.setCoinLogo;
 
@@ -30,6 +31,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.cryp2pay.cryp2payintegration.Cryp2Pay;
 import com.cryp2pay.cryp2payintegration.R;
+import com.cryp2pay.cryp2payintegration.Utils;
 import com.cryp2pay.cryp2payintegration.model.WalletModel;
 import com.google.android.material.card.MaterialCardView;
 
@@ -96,8 +98,13 @@ public class PaymentOptionsAdapter extends RecyclerView.Adapter<PaymentOptionsAd
 //                intent.putExtra("trans_image", "trans_image" + position);
 //                holder.cardView.getContext().startActivity(intent, optionsCompat.toBundle());
 
-                    processVal(returnCoinName(myModel.getCoin()), myModel.getValue(), String.valueOf(amount));
 
+                if (myModel.getCoin().equals("BitTorrent")){
+                    processVal("bttc", myModel.getValue(), String.valueOf(amount));
+                }
+                else {
+                    processVal(Utils.returnCoinName(myModel.getCoin()), myModel.getValue(), String.valueOf(amount));
+                }
 
             }
         });
@@ -129,36 +136,6 @@ public class PaymentOptionsAdapter extends RecyclerView.Adapter<PaymentOptionsAd
         view.startAnimation(fall_down);
     }
 
-    private String returnCoinName(String coin){
-        String finalName = "";
-        switch (coin){
-            case "Bitcoin":
-                finalName = "BTC";
-                break;
-            case "Algorand":
-                finalName = "ALGO";
-                break;
-            case "DogeCoin":
-                finalName = "DOGE";
-                break;
-            case "Tron":
-                finalName = "TRX";
-                break;
-            case "XRP":
-                finalName = "XRP";
-                break;
-            case "XLM":
-                finalName = "XLM";
-                break;
-            case "Digibyte":
-                finalName = "DGB";
-                break;
-            case "Zilliqa":
-                finalName = "ZIL";
-                break;
-        }
-        return finalName;
-    }
 
     private void processVal(String coin,String amount, String enteredAmount){
         RequestQueue requestQueue;
@@ -168,6 +145,7 @@ public class PaymentOptionsAdapter extends RecyclerView.Adapter<PaymentOptionsAd
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            String coin1;
                             JSONObject object = response.getJSONObject("Realtime Currency Exchange Rate");
                             String getVal = object.getString("5. Exchange Rate");
                             Toast.makeText(activity, getVal + coin, Toast.LENGTH_SHORT).show();
@@ -178,8 +156,14 @@ public class PaymentOptionsAdapter extends RecyclerView.Adapter<PaymentOptionsAd
                             }
                             else {
 //                                Log.d("myapp", merchantID + "adapter");
+                                if (coin.equals("bttc")){
+                                    coin1 =  "btt";
+                                }
+                                else {
+                                    coin1 = coin;
+                                }
                                 Cryp2Pay cryp2Pay = new Cryp2Pay(activity, resultActivity, phone, merchantID) ;
-                                cryp2Pay.paymentProcessUI(activity, coin, enteredAmount, String.valueOf(finalValue), token, merchantID, phone, name);
+                                cryp2Pay.paymentProcessUI(activity, coin1, enteredAmount, String.valueOf(finalValue), token, merchantID, phone, name);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
