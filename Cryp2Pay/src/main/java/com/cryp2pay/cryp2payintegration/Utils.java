@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class Utils {
 
-    public static final String BASE_API_URL = "http://43.204.35.41/";
+    public static final String BASE_API_URL = "https://cryptopayapi.ml/";
     public static final String LOGIN_ENDPOINT = BASE_API_URL + "api/login/";
     public static final String VERIFY_PHONE_ENDPOINT = BASE_API_URL + "api/varify_number/";
     public static final String GET_WALLET_INFO_ENDPOINT = BASE_API_URL + "api/wallets/";
