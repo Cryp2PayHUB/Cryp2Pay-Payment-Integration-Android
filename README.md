@@ -23,7 +23,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```groovy
 dependencies {
-	         implementation 'com.github.Cryp2PayHUB:Cryp2Pay-Payment-Integration-Android:0.8'
+	         implementation 'com.github.Cryp2PayHUB:Cryp2Pay-Payment-Integration-Android:0.9'
 	}
 ```
 
